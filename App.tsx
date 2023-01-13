@@ -45,8 +45,8 @@ const styles = StyleSheet.create({
     height: 100,
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'space-between',
-    padding: 10,
+    justifyContent: 'space-around',
+    padding: 8,
   },
   image: {
     height: 100,
