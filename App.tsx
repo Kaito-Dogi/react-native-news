@@ -1,4 +1,4 @@
-import {StyleSheet, View} from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 export default function App() {
   return (
@@ -23,16 +23,16 @@ const styles = StyleSheet.create({
     width: '100%',
     borderColor: 'gray',
     borderWidth: 1,
-    flexDirection: "row"
+    flexDirection: 'row',
   },
   imageContainer: {
     height: 100,
     width: 100,
-    backgroundColor: "red"
+    backgroundColor: 'red',
   },
   contentContainer: {
     height: 100,
-    backgroundColor: "blue",
-    flex: 1
-  }
+    backgroundColor: 'blue',
+    flex: 1,
+  },
 });
