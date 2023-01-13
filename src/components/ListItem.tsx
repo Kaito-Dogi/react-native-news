@@ -37,7 +37,7 @@ type Props = {
   author: string;
 };
 
-const ListItem = (props: Props) => {
+export const ListItem = (props: Props) => {
   return (
     <View style={styles.itemContainer}>
       <View style={styles.imageContainer}>
@@ -52,5 +52,3 @@ const ListItem = (props: Props) => {
     </View>
   );
 };
-
-export { ListItem };
