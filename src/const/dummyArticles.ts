@@ -1,6 +1,6 @@
 import { Article } from '../types/Article';
 
-export const articles: Article[] = [
+export const dummyArticles: Article[] = [
   {
     author: 'World Nature News',
     title: '世界自然保護団体、森林の二酸化炭素削減効果について研究結果を発表',

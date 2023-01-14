@@ -1,7 +1,8 @@
 import { FlatList, ListRenderItemInfo, SafeAreaView, StyleSheet } from 'react-native';
 import { ListItem } from './src/components/ListItem';
-import { articles } from './src/const/articles';
+import { dummyArticles } from './src/const/dummyArticles';
 import { Article } from './src/types/Article';
+import { useState } from 'react';
 
 const styles = StyleSheet.create({
   container: {
@@ -11,6 +12,8 @@ const styles = StyleSheet.create({
 });
 
 export default function App() {
+  const [articles, setArticles] = useState(dummyArticles);
+
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
