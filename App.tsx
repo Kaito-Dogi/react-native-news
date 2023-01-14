@@ -2,7 +2,7 @@ import { FlatList, ListRenderItemInfo, SafeAreaView, StyleSheet } from 'react-na
 import { ListItem } from './src/components/ListItem';
 import { dummyArticles } from './src/const/dummyArticles';
 import { Article } from './src/types/Article';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const styles = StyleSheet.create({
   container: {
@@ -12,7 +12,14 @@ const styles = StyleSheet.create({
 });
 
 export default function App() {
-  const [articles, setArticles] = useState(dummyArticles);
+  const [articles, setArticles] = useState<Article[]>([]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setArticles(dummyArticles);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <SafeAreaView style={styles.container}>
