@@ -13,12 +13,12 @@ const styles = StyleSheet.create({
   },
 });
 
-type AppState = {
+type HomeScreenState = {
   articles: Article[];
 };
 
-export default class App extends React.Component<{}, AppState> {
-  state: AppState = {
+export class HomeScreen extends React.Component<{}, HomeScreenState> {
+  state: HomeScreenState = {
     articles: [],
   };
 
