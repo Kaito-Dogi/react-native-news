@@ -1,10 +1,10 @@
 import { FlatList, ListRenderItemInfo, SafeAreaView, StyleSheet } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import axios, { AxiosError, AxiosResponse } from 'axios';
-import { Article } from "../types/Article";
-import { NEWS_API_URL } from "../api/url";
-import { NewsApiResponse } from "../api/response/NewsApiResponse";
-import { ListItem } from "../components/ListItem";
+import { Article } from '../types/Article';
+import { NEWS_API_URL } from '../api/url';
+import { NewsApiResponse } from '../api/response/NewsApiResponse';
+import { ListItem } from '../components/ListItem';
 
 const styles = StyleSheet.create({
   container: {
