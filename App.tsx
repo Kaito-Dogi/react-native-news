@@ -1,9 +1,17 @@
 import { FlatList, ListRenderItemInfo, SafeAreaView, StyleSheet } from 'react-native';
 import { ListItem } from './src/components/ListItem';
-import { dummyArticles } from './src/const/dummyArticles';
 import { Article } from './src/types/Article';
 import { useEffect, useState } from 'react';
 import { ENV } from './ENV';
+import axios, { AxiosError, AxiosResponse } from 'axios';
+
+const URL = `https://newsapi.org/v2/top-headlines?country=jp&apiKey=${ENV.NEWS_API_KEY}`;
+
+type NewsAPiResponse = {
+  status: string;
+  totalResults: number;
+  articles: Article[];
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -16,11 +24,15 @@ export default function App() {
   const [articles, setArticles] = useState<Article[]>([]);
 
   useEffect(() => {
-    alert(ENV.NEWS_API_KEY);
-    const timer = setTimeout(() => {
-      setArticles(dummyArticles);
-    }, 2000);
-    return () => clearTimeout(timer);
+    axios
+      .get(URL)
+      .then((res: AxiosResponse<NewsAPiResponse>) => {
+        const articles = res.data.articles;
+        setArticles(articles);
+      })
+      .catch((error: AxiosError<{ error: string }>) => {
+        alert(error.message);
+      });
   }, []);
 
   return (
