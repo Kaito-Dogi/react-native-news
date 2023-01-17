@@ -2,16 +2,9 @@ import { FlatList, ListRenderItemInfo, SafeAreaView, StyleSheet } from 'react-na
 import { ListItem } from './src/components/ListItem';
 import { Article } from './src/types/Article';
 import React, { useEffect, useState } from 'react';
-import { ENV } from './ENV';
 import axios, { AxiosError, AxiosResponse } from 'axios';
-
-const URL = `https://newsapi.org/v2/top-headlines?country=jp&apiKey=${ENV.NEWS_API_KEY}`;
-
-type NewsAPiResponse = {
-  status: string;
-  totalResults: number;
-  articles: Article[];
-};
+import { NEWS_API_URL } from "./src/api/url"
+import { NewsApiResponse } from "./src/api/response/NewsApiResponse";
 
 const styles = StyleSheet.create({
   container: {
@@ -25,8 +18,8 @@ const App: React.FC = () => {
 
   useEffect(() => {
     axios
-      .get(URL)
-      .then((res: AxiosResponse<NewsAPiResponse>) => {
+      .get(NEWS_API_URL)
+      .then((res: AxiosResponse<NewsApiResponse>) => {
         const articles = res.data.articles;
         setArticles(articles);
       })
