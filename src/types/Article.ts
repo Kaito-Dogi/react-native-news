@@ -1,6 +1,6 @@
 export type Article = {
   author: string;
   title: string;
-  urlToImage: string | null;
+  urlToImage: string | undefined;
   publishedAt: string;
 };

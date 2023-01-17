@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
 });
 
 type Props = {
-  imageUri: string | null;
+  imageUri: string | undefined;
   title: string;
   author: string;
 };
