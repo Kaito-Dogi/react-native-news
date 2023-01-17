@@ -1,4 +1,5 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import React from 'react';
 
 const styles = StyleSheet.create({
   itemContainer: {
@@ -38,7 +39,7 @@ type ListItemProps = {
   onListItemPress: () => void;
 };
 
-export const ListItem = (props: ListItemProps) => {
+export const ListItem: React.FC<ListItemProps> = (props) => {
   return (
     <TouchableOpacity style={styles.itemContainer} onPress={props.onListItemPress}>
       <View style={styles.imageContainer}>
