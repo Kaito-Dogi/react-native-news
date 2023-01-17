@@ -4,6 +4,7 @@ import { Article } from './src/types/Article';
 import { useEffect, useState } from 'react';
 import { ENV } from './ENV';
 import axios, { AxiosError, AxiosResponse } from 'axios';
+import * as React from 'react';
 
 const URL = `https://newsapi.org/v2/top-headlines?country=jp&apiKey=${ENV.NEWS_API_KEY}`;
 
@@ -20,7 +21,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function App() {
+const App: React.FC = () => {
   const [articles, setArticles] = useState<Article[]>([]);
 
   useEffect(() => {
@@ -50,4 +51,6 @@ export default function App() {
       />
     </SafeAreaView>
   );
-}
+};
+
+export default App;
