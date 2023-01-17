@@ -1,10 +1,9 @@
 import { FlatList, ListRenderItemInfo, SafeAreaView, StyleSheet } from 'react-native';
 import { ListItem } from './src/components/ListItem';
 import { Article } from './src/types/Article';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ENV } from './ENV';
 import axios, { AxiosError, AxiosResponse } from 'axios';
-import * as React from 'react';
 
 const URL = `https://newsapi.org/v2/top-headlines?country=jp&apiKey=${ENV.NEWS_API_KEY}`;
 
