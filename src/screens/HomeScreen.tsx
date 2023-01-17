@@ -37,6 +37,7 @@ export const HomeScreen: React.FC = () => {
             imageUri={article.item.urlToImage}
             title={article.item.title}
             author={article.item.author}
+            onListItemPress={() => alert(article.item.title)}
           />
         )}
         keyExtractor={(article) => article.title}

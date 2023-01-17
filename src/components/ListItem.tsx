@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 const styles = StyleSheet.create({
   itemContainer: {
@@ -31,15 +31,16 @@ const styles = StyleSheet.create({
   },
 });
 
-type Props = {
+type ListItemProps = {
   imageUri: string | undefined;
   title: string;
   author: string;
+  onListItemPress: () => void;
 };
 
-export const ListItem = (props: Props) => {
+export const ListItem = (props: ListItemProps) => {
   return (
-    <View style={styles.itemContainer}>
+    <TouchableOpacity style={styles.itemContainer} onPress={props.onListItemPress}>
       <View style={styles.imageContainer}>
         {!!props.imageUri && <Image style={styles.image} source={{ uri: props.imageUri }} />}
       </View>
@@ -49,6 +50,6 @@ export const ListItem = (props: Props) => {
         </Text>
         <Text style={styles.author}>{props.author}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
