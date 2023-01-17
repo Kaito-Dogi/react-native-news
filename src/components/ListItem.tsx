@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
 });
 
 type Props = {
-  imageUri: string;
+  imageUri: string | null;
   title: string;
   author: string;
 };
@@ -41,7 +41,7 @@ export const ListItem = (props: Props) => {
   return (
     <View style={styles.itemContainer}>
       <View style={styles.imageContainer}>
-        <Image style={styles.image} source={{ uri: props.imageUri }} />
+        {!!props.imageUri && <Image style={styles.image} source={{ uri: props.imageUri }} />}
       </View>
       <View style={styles.contentContainer}>
         <Text numberOfLines={3} style={styles.title}>
