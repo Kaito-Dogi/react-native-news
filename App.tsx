@@ -1,17 +1,8 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
-import { NavigationContainer } from '@react-navigation/native';
-import { HomeScreen } from './src/screens/HomeScreen';
+import { AppNavigator } from './src/navigation/AppNavigator';
 
-const Stack = createStackNavigator();
 const App: React.FC = () => {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+  return <AppNavigator />;
 };
 
 export default App;
