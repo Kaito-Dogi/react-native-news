@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
 export const ArticleScreen: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>This is ArticleScreen!</Text>;
+      <Text>This is ArticleScreen!</Text>
     </SafeAreaView>
   );
 };
