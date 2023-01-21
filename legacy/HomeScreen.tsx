@@ -17,7 +17,7 @@ type HomeScreenState = {
   articles: Article[];
 };
 
-export class HomeScreen extends React.Component<{}, HomeScreenState> {
+export class HomeScreen extends React.Component<object, HomeScreenState> {
   state: HomeScreenState = {
     articles: [],
   };
@@ -44,6 +44,7 @@ export class HomeScreen extends React.Component<{}, HomeScreenState> {
               imageUri={article.item.urlToImage}
               title={article.item.title}
               author={article.item.author}
+              onListItemPress={() => {}}
             />
           )}
           keyExtractor={(article) => article.title}

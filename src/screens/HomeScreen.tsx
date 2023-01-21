@@ -5,6 +5,9 @@ import { Article } from '../types/Article';
 import { NEWS_API_URL } from '../api/url';
 import { NewsApiResponse } from '../api/response/NewsApiResponse';
 import { ListItem } from '../components/ListItem';
+import { RouteProp } from '@react-navigation/native';
+import { RootStackParamList } from '../navigation/AppNavigator';
+import { StackNavigationProp } from '@react-navigation/stack';
 
 const styles = StyleSheet.create({
   container: {
@@ -13,7 +16,12 @@ const styles = StyleSheet.create({
   },
 });
 
-export const HomeScreen: React.FC = () => {
+type HomeScreenProps = {
+  navigation: StackNavigationProp<RootStackParamList, 'Home'>;
+  route: RouteProp<RootStackParamList, 'Home'>;
+};
+
+export const HomeScreen: React.FC<HomeScreenProps> = (props) => {
   const [articles, setArticles] = useState<Article[]>([]);
 
   useEffect(() => {
@@ -37,7 +45,7 @@ export const HomeScreen: React.FC = () => {
             imageUri={article.item.urlToImage}
             title={article.item.title}
             author={article.item.author}
-            onListItemPress={() => alert(article.item.title)}
+            onListItemPress={() => props.navigation.navigate('Article', { url: '' })}
           />
         )}
         keyExtractor={(article) => article.title}

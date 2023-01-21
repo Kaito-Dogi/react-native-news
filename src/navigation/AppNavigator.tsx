@@ -4,15 +4,20 @@ import { HomeScreen } from '../screens/HomeScreen';
 import { createStackNavigator } from '@react-navigation/stack';
 import { ArticleScreen } from '../screens/ArticleScreen';
 
-const Stack = createStackNavigator();
+export type RootStackParamList = {
+  Home: undefined;
+  Article: { url: string };
+};
+
+const RootStack = createStackNavigator<RootStackParamList>();
 
 export const AppNavigator: React.FC = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="Article" component={ArticleScreen} />
-      </Stack.Navigator>
+      <RootStack.Navigator initialRouteName={'Home'}>
+        <RootStack.Screen name={'Home'} component={HomeScreen} options={{ headerShown: false }} />
+        <RootStack.Screen name={'Article'} component={ArticleScreen} initialParams={{ url: '' }} />
+      </RootStack.Navigator>
     </NavigationContainer>
   );
 };
