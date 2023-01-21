@@ -1,20 +1,14 @@
-import { FlatList, ListRenderItemInfo, SafeAreaView, StyleSheet } from 'react-native';
-import React, { useEffect, useState } from 'react';
-import axios, { AxiosError, AxiosResponse } from 'axios';
-import { Article } from '../types/Article';
-import { NEWS_API_URL } from '../api/url';
-import { NewsApiResponse } from '../api/response/NewsApiResponse';
-import { ListItem } from '../components/ListItem';
-import { RouteProp } from '@react-navigation/native';
-import { RootStackParamList } from '../navigation/AppNavigator';
 import { StackNavigationProp } from '@react-navigation/stack';
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-});
+import { RootStackParamList } from '../../navigation/AppNavigator';
+import { RouteProp } from '@react-navigation/native';
+import React, { useEffect, useState } from 'react';
+import { Article } from '../../types/Article';
+import axios, { AxiosError, AxiosResponse } from 'axios';
+import { NEWS_API_URL } from '../../api/url';
+import { NewsApiResponse } from '../../api/response/NewsApiResponse';
+import { FlatList, ListRenderItemInfo, SafeAreaView } from 'react-native';
+import { ListItem } from '../../components/ListItem';
+import { styles } from './styles';
 
 type HomeScreenProps = {
   navigation: StackNavigationProp<RootStackParamList, 'Home'>;
