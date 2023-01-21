@@ -1,36 +1,6 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
-
-const styles = StyleSheet.create({
-  itemContainer: {
-    height: 100,
-    width: '100%',
-    borderColor: 'gray',
-    borderWidth: 1,
-    flexDirection: 'row',
-  },
-  imageContainer: {
-    height: 100,
-    width: 100,
-  },
-  contentContainer: {
-    height: 100,
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'space-around',
-    padding: 8,
-  },
-  image: {
-    height: 100,
-    width: 100,
-  },
-  title: {
-    fontSize: 16,
-  },
-  author: {
-    fontSize: 12,
-  },
-});
+import { Image, Text, TouchableOpacity, View } from 'react-native';
+import { styles } from './styles';
 
 type ListItemProps = {
   imageUri: string | undefined;

@@ -7,8 +7,8 @@ import axios, { AxiosError, AxiosResponse } from 'axios';
 import { NEWS_API_URL } from '../../api/url';
 import { NewsApiResponse } from '../../api/response/NewsApiResponse';
 import { FlatList, ListRenderItemInfo, SafeAreaView } from 'react-native';
-import { ListItem } from '../../components/ListItem';
 import { styles } from './styles';
+import { ListItem } from '../../components/ListItem';
 
 type HomeScreenProps = {
   navigation: StackNavigationProp<RootStackParamList, 'Home'>;
