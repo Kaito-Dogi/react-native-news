@@ -10,6 +10,15 @@ module.exports = function(api) {
           legacy: true,
         },
       ],
+      [
+        'module-resolver',
+        {
+          alias: {
+            src: './src',
+            assets: './assets',
+          },
+        },
+      ],
     ],
   };
 };
