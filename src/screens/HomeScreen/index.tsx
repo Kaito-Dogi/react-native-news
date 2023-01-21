@@ -1,14 +1,14 @@
 import { StackNavigationProp } from '@react-navigation/stack';
-import { RootStackParamList } from '../../navigation/AppNavigator';
+import { RootStackParamList } from 'src/navigation/AppNavigator';
 import { RouteProp } from '@react-navigation/native';
 import React, { useEffect, useState } from 'react';
-import { Article } from '../../models/Article';
+import { Article } from 'src/models/Article';
 import axios, { AxiosError, AxiosResponse } from 'axios';
-import { NEWS_API_URL } from '../../api/url';
-import { NewsApiResponse } from '../../api/response/NewsApiResponse';
+import { NEWS_API_URL } from 'src/api/url';
+import { NewsApiResponse } from 'src/api/response/NewsApiResponse';
 import { FlatList, ListRenderItemInfo, SafeAreaView } from 'react-native';
 import { styles } from './styles';
-import { ListItem } from '../../components/ListItem';
+import { ListItem } from 'src/components/ListItem';
 
 type HomeScreenProps = {
   navigation: StackNavigationProp<RootStackParamList, 'Home'>;
