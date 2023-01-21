@@ -2,7 +2,7 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../navigation/AppNavigator';
 import { RouteProp } from '@react-navigation/native';
 import React, { useEffect, useState } from 'react';
-import { Article } from '../../types/Article';
+import { Article } from '../../models/Article';
 import axios, { AxiosError, AxiosResponse } from 'axios';
 import { NEWS_API_URL } from '../../api/url';
 import { NewsApiResponse } from '../../api/response/NewsApiResponse';
