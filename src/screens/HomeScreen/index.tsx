@@ -39,7 +39,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = (props) => {
             imageUri={article.item.urlToImage}
             title={article.item.title}
             author={article.item.author}
-            onListItemPress={() => props.navigation.navigate('Article', { url: '' })}
+            onListItemPress={() => props.navigation.navigate('Article', { url: article.item.url })}
           />
         )}
         keyExtractor={(article) => article.title}
