@@ -1,4 +1,4 @@
-import { Article } from 'src/models/Article';
+import { Article } from "src/models/Article";
 
 export type NewsApiResponse = {
   status: string;
