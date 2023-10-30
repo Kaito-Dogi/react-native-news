@@ -10,6 +10,7 @@ type ArticleScreenProps = {
   navigation: StackNavigationProp<RootStackParamList, 'Article'>;
   route: RouteProp<RootStackParamList, 'Article'>;
 };
+
 export const ArticleScreen: React.FC<ArticleScreenProps> = (props) => {
   return (
     <SafeAreaView style={styles.container}>
