@@ -14,11 +14,17 @@ export const userReducer = (
   action: UserAction,
 ): UserState => {
   switch (action.type) {
-    case "ADD_CLIP":
-      return {
-        ...state,
-        clips: [...state.clips, action.payload.clip],
-      };
+    case "ADD_CLIP": {
+      const clip = action.payload.clip;
+
+      // 既にクリップされている場合は元の state を返す
+      return state.clips.includes(clip)
+        ? state
+        : {
+            ...state,
+            clips: [...state.clips, action.payload.clip],
+          };
+    }
     case "DELETE_CLIP":
       return {
         ...state,
