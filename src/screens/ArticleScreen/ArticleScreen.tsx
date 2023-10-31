@@ -5,7 +5,7 @@ import { SafeAreaView, Text, TouchableOpacity } from "react-native";
 import WebView from "react-native-webview";
 import { useDispatch } from "react-redux";
 import { HomeStackParamList } from "src/navigation";
-import { addClip } from "src/store/actions/user";
+import { addClip, deleteClip } from "src/store/actions/user";
 
 import { styles } from "./styles";
 
@@ -18,7 +18,7 @@ type Props = {
  * @package
  */
 export const ArticleScreen: React.FC<Props> = ({ navigation, route }) => {
-  // 使用しないが呼び出しておく
+  // 使用していないが呼び出しておく
   navigation;
 
   const { article } = route.params;
@@ -29,7 +29,7 @@ export const ArticleScreen: React.FC<Props> = ({ navigation, route }) => {
       <TouchableOpacity onPress={() => dispatch(addClip(article))}>
         <Text style={{ margin: 10, fontSize: 30 }}>ADD_CLIP</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => dispatch(addClip(article))}>
+      <TouchableOpacity onPress={() => dispatch(deleteClip(article))}>
         <Text style={{ margin: 10, fontSize: 30 }}>DELETE_CLIP</Text>
       </TouchableOpacity>
       <WebView originWhitelist={["*"]} source={{ uri: article.url }} />

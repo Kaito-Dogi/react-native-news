@@ -42,7 +42,12 @@
     "unused-imports/no-unused-imports": "error",
     "import-access/jsdoc": "error"
   },
-  "overrides": [],
+  "overrides": [
+    {
+      "files": ["App.tsx"],
+      "rules": { "import/no-default-export": "off" }
+    }
+  ],
   "settings": {
     "react": {
       "version": "detect"

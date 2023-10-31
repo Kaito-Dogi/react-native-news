@@ -1,11 +1,7 @@
-import { composeWithDevTools } from "@redux-devtools/extension";
 import { combineReducers, createStore } from "redux";
 
-import { userReducer,UserState } from "./reducers/user";
-
-type State = {
-  user: UserState;
-};
+import { userReducer } from "./reducers/user";
+import { State } from "./State";
 
 const rootReducer = combineReducers<State>({
   user: userReducer,
@@ -15,4 +11,4 @@ const rootReducer = combineReducers<State>({
 /**
  * @package
  */
-export const store = createStore(rootReducer, composeWithDevTools());
+export const store = createStore(rootReducer);

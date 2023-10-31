@@ -30,7 +30,7 @@ const screenOptions = ({
     color: string;
     size: number;
   }) => {
-    // 使用しないが呼び出しておく
+    // 使用していないが呼び出しておく
     focused;
 
     switch (route.name) {

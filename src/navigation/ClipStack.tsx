@@ -1,5 +1,7 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
+import { Article } from "src/models/Article";
+import { ArticleScreen } from "src/screens/ArticleScreen";
 import { ClipScreen } from "src/screens/ClipScreen";
 
 /**
@@ -7,6 +9,7 @@ import { ClipScreen } from "src/screens/ClipScreen";
  */
 export type ClipStackParamList = {
   Clip: undefined;
+  Article: { article: Article };
 };
 
 const Stack = createStackNavigator<ClipStackParamList>();
@@ -22,6 +25,7 @@ export const ClipStack: React.FC = () => {
         component={ClipScreen}
         options={{ headerShown: false }}
       />
+      <Stack.Screen name={"Article"} component={ArticleScreen} />
     </Stack.Navigator>
   );
 };
