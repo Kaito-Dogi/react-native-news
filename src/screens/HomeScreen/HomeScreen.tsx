@@ -15,6 +15,9 @@ type HomeScreenProps = {
   route: RouteProp<RootStackParamList, 'Home'>;
 };
 
+/**
+ * @package
+ */
 export const HomeScreen: React.FC<HomeScreenProps> = (props) => {
   const [articles, setArticles] = useState<Article[]>([]);
 
@@ -39,7 +42,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = (props) => {
             imageUri={article.item.urlToImage}
             title={article.item.title}
             author={article.item.author}
-            onListItemPress={() => props.navigation.navigate('Article', { url: article.item.url })}
+            onListItemPress={() => props.navigation.navigate('Article', { article: article.item })}
           />
         )}
         keyExtractor={(article) => article.title}
