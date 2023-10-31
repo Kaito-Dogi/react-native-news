@@ -2,15 +2,15 @@ import React from "react";
 import { SafeAreaView, Text, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { RootStackParamList } from "src/navigation/AppNavigator";
 import { RouteProp } from "@react-navigation/native";
 import WebView from "react-native-webview";
 import { addClip } from "src/store/actions/user";
 import { useDispatch } from "react-redux";
+import { HomeStackParamList } from "src/navigation";
 
 type ArticleScreenProps = {
-  navigation: StackNavigationProp<RootStackParamList, "Article">;
-  route: RouteProp<RootStackParamList, "Article">;
+  navigation: StackNavigationProp<HomeStackParamList, "Article">;
+  route: RouteProp<HomeStackParamList, "Article">;
 };
 
 /**

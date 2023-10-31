@@ -1,28 +1,21 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import { HomeScreen } from "src/screens/HomeScreen";
-import { ArticleScreen } from "src/screens/ArticleScreen";
-import { Article } from "src/models/Article";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { HomeStack } from "./HomeStack";
+import { ClipStack } from "./ClipStack";
 
-export type RootStackParamList = {
-  Home: undefined;
-  Article: { article: Article };
-};
+const Tab = createBottomTabNavigator();
 
-const RootStack = createStackNavigator<RootStackParamList>();
-
+/**
+ * @package
+ */
 export const AppNavigator: React.FC = () => {
   return (
     <NavigationContainer>
-      <RootStack.Navigator initialRouteName={"Home"}>
-        <RootStack.Screen
-          name={"Home"}
-          component={HomeScreen}
-          options={{ headerShown: false }}
-        />
-        <RootStack.Screen name={"Article"} component={ArticleScreen} />
-      </RootStack.Navigator>
+      <Tab.Navigator>
+        <Tab.Screen name="Home" component={HomeStack} />
+        <Tab.Screen name="Clip" component={ClipStack} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 };
