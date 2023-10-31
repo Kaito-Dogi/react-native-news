@@ -1,18 +1,10 @@
-import { Action } from "./Action";
-
-type Payload = {
-  clip: string;
-};
-
-type AddClipAction = {
-  type: Extract<Action, "ADD_CLIP">;
-  payload: Payload;
-};
+import { Article } from "src/models/Article";
+import { UserAction } from "./UserAction";
 
 /**
  * @package
  */
-export const addClip = ({ clip }: Payload): AddClipAction => {
+export const addClip = (clip: Article): UserAction => {
   return {
     type: "ADD_CLIP",
     payload: { clip },
