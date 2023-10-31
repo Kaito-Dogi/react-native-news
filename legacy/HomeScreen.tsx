@@ -22,7 +22,7 @@ type HomeScreenState = {
   articles: Article[];
 };
 
-export class HomeScreen extends React.Component<object, HomeScreenState> {
+class HomeScreen extends React.Component<object, HomeScreenState> {
   state: HomeScreenState = {
     articles: [],
   };
@@ -58,3 +58,6 @@ export class HomeScreen extends React.Component<object, HomeScreenState> {
     );
   }
 }
+
+// 使用していないが呼び出しておく
+HomeScreen;
