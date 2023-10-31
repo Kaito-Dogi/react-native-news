@@ -1,11 +1,14 @@
 import { RouteProp } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
-import React from "react";
-import { SafeAreaView, Text, TouchableOpacity } from "react-native";
+import React, { useCallback } from "react";
+import { SafeAreaView } from "react-native";
 import WebView from "react-native-webview";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { ClipButton } from "src/components/ClipButton";
 import { HomeStackParamList } from "src/navigation";
+import { State } from "src/store";
 import { addClip, deleteClip } from "src/store/actions/user";
+import { UserState } from "src/store/reducers/user";
 
 import { styles } from "./styles";
 
@@ -22,16 +25,20 @@ export const ArticleScreen: React.FC<Props> = ({ navigation, route }) => {
   navigation;
 
   const { article } = route.params;
+
   const dispatch = useDispatch();
+
+  const selector = useSelector<State, UserState>((state) => state.user);
+  const { clips } = selector;
+
+  const isClipped = clips.includes(article);
+  const toggleClip = useCallback(() => {
+    isClipped ? dispatch(deleteClip(article)) : dispatch(addClip(article));
+  }, [isClipped, article, dispatch]);
 
   return (
     <SafeAreaView style={styles.container}>
-      <TouchableOpacity onPress={() => dispatch(addClip(article))}>
-        <Text style={{ margin: 10, fontSize: 30 }}>ADD_CLIP</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => dispatch(deleteClip(article))}>
-        <Text style={{ margin: 10, fontSize: 30 }}>DELETE_CLIP</Text>
-      </TouchableOpacity>
+      <ClipButton onPress={toggleClip} isEnabled={isClipped} />
       <WebView originWhitelist={["*"]} source={{ uri: article.url }} />
     </SafeAreaView>
   );
