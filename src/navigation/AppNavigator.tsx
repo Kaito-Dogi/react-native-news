@@ -13,8 +13,16 @@ export const AppNavigator: React.FC = () => {
   return (
     <NavigationContainer>
       <Tab.Navigator>
-        <Tab.Screen name="Home" component={HomeStack} />
-        <Tab.Screen name="Clip" component={ClipStack} />
+        <Tab.Screen
+          name="Home"
+          component={HomeStack}
+          options={{ headerShown: false }}
+        />
+        <Tab.Screen
+          name="Clip"
+          component={ClipStack}
+          options={{ headerShown: false }}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
