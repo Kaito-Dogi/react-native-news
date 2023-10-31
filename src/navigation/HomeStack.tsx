@@ -1,14 +1,14 @@
 import React from "react";
 import { ArticleScreen } from "src/screens/ArticleScreen";
 import { createStackNavigator } from "@react-navigation/stack";
-import { HomeScreen } from "src/screens/HomeScreen";
+import { ListScreen } from "src/screens/ListScreen";
 import { Article } from "src/models/Article";
 
 /**
  * @package
  */
 export type HomeStackParamList = {
-  Home: undefined;
+  List: undefined;
   Article: { article: Article };
 };
 
@@ -19,10 +19,10 @@ const Stack = createStackNavigator<HomeStackParamList>();
  */
 export const HomeStack: React.FC = () => {
   return (
-    <Stack.Navigator initialRouteName={"Home"}>
+    <Stack.Navigator initialRouteName={"List"}>
       <Stack.Screen
-        name={"Home"}
-        component={HomeScreen}
+        name={"List"}
+        component={ListScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen name={"Article"} component={ArticleScreen} />

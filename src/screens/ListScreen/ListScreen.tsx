@@ -10,15 +10,15 @@ import { styles } from "./styles";
 import { ListItem } from "src/components/ListItem";
 import { HomeStackParamList } from "src/navigation";
 
-type HomeScreenProps = {
-  navigation: StackNavigationProp<HomeStackParamList, "Home">;
-  route: RouteProp<HomeStackParamList, "Home">;
+type ListScreenProps = {
+  navigation: StackNavigationProp<HomeStackParamList, "List">;
+  route: RouteProp<HomeStackParamList, "List">;
 };
 
 /**
  * @package
  */
-export const HomeScreen: React.FC<HomeScreenProps> = (props) => {
+export const ListScreen: React.FC<ListScreenProps> = (props) => {
   const [articles, setArticles] = useState<Article[]>([]);
 
   useEffect(() => {
