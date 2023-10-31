@@ -1,12 +1,13 @@
+import { RouteProp } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
 import React from "react";
 import { SafeAreaView, Text, TouchableOpacity } from "react-native";
-import { styles } from "./styles";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { RouteProp } from "@react-navigation/native";
 import WebView from "react-native-webview";
-import { addClip } from "src/store/actions/user";
 import { useDispatch } from "react-redux";
 import { HomeStackParamList } from "src/navigation";
+import { addClip } from "src/store/actions/user";
+
+import { styles } from "./styles";
 
 type Props = {
   navigation: StackNavigationProp<HomeStackParamList, "Article">;

@@ -1,8 +1,8 @@
-import React from "react";
-import { ArticleScreen } from "src/screens/ArticleScreen";
 import { createStackNavigator } from "@react-navigation/stack";
-import { ListScreen } from "src/screens/ListScreen";
+import React from "react";
 import { Article } from "src/models/Article";
+import { ArticleScreen } from "src/screens/ArticleScreen";
+import { ListScreen } from "src/screens/ListScreen";
 
 /**
  * @package

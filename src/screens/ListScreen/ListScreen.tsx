@@ -1,14 +1,15 @@
-import { StackNavigationProp } from "@react-navigation/stack";
 import { RouteProp } from "@react-navigation/native";
-import React, { useEffect, useState } from "react";
-import { Article } from "src/models/Article";
+import { StackNavigationProp } from "@react-navigation/stack";
 import axios, { AxiosError, AxiosResponse } from "axios";
-import { NEWS_API_URL } from "src/api/url";
-import { NewsApiResponse } from "src/api/response/NewsApiResponse";
+import React, { useEffect, useState } from "react";
 import { FlatList, ListRenderItemInfo, SafeAreaView } from "react-native";
-import { styles } from "./styles";
+import { NewsApiResponse } from "src/api/response/NewsApiResponse";
+import { NEWS_API_URL } from "src/api/url";
 import { ListItem } from "src/components/ListItem";
+import { Article } from "src/models/Article";
 import { HomeStackParamList } from "src/navigation";
+
+import { styles } from "./styles";
 
 type Props = {
   navigation: StackNavigationProp<HomeStackParamList, "List">;

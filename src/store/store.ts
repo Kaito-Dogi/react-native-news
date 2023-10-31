@@ -1,6 +1,7 @@
-import { combineReducers, createStore } from "redux";
-import { UserState, userReducer } from "./reducers/user";
 import { composeWithDevTools } from "@redux-devtools/extension";
+import { combineReducers, createStore } from "redux";
+
+import { userReducer,UserState } from "./reducers/user";
 
 type State = {
   user: UserState;

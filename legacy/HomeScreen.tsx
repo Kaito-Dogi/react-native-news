@@ -1,15 +1,15 @@
-import React from "react";
-import { Article } from "src/models/Article";
 import axios, { AxiosError, AxiosResponse } from "axios";
-import { NewsApiResponse } from "src/api/response/NewsApiResponse";
-import { NEWS_API_URL } from "src/api/url";
+import React from "react";
 import {
   FlatList,
   ListRenderItemInfo,
   SafeAreaView,
   StyleSheet,
 } from "react-native";
+import { NewsApiResponse } from "src/api/response/NewsApiResponse";
+import { NEWS_API_URL } from "src/api/url";
 import { ListItem } from "src/components/ListItem";
+import { Article } from "src/models/Article";
 
 const styles = StyleSheet.create({
   container: {

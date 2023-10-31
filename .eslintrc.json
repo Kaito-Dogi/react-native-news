@@ -21,9 +21,26 @@
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "prettier"
   ],
-  "plugins": ["react", "react-hooks", "@typescript-eslint", "import-access"],
+  "plugins": [
+    "sort-destructure-keys",
+    "simple-import-sort",
+    "import",
+    "unused-imports",
+    "import-access",
+    "react",
+    "react-hooks",
+    "@typescript-eslint"
+  ],
   "rules": {
-    "import-access/jsdoc": ["error"]
+    "sort-destructure-keys/sort-destructure-keys": "error",
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "import/first": "error",
+    "import/newline-after-import": "error",
+    "import/no-default-export": "error",
+    "import/no-duplicates": "error",
+    "unused-imports/no-unused-imports": "error",
+    "import-access/jsdoc": "error"
   },
   "overrides": [],
   "settings": {

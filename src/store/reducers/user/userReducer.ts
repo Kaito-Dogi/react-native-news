@@ -1,4 +1,5 @@
 import { UserAction } from "src/store/actions/user";
+
 import { UserState } from "./UserState";
 
 const initialState: UserState = {

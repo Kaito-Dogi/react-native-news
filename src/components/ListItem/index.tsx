@@ -1,5 +1,6 @@
 import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
+
 import { styles } from "./styles";
 
 type Props = {
@@ -10,10 +11,10 @@ type Props = {
 };
 
 export const ListItem: React.FC<Props> = ({
-  imageUri,
-  title,
   author,
+  imageUri,
   onListItemPress,
+  title,
 }) => {
   return (
     <TouchableOpacity style={styles.itemContainer} onPress={onListItemPress}>

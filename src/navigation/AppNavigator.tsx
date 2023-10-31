@@ -1,13 +1,13 @@
-import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import {
-  createBottomTabNavigator,
-  BottomTabNavigationOptions,
-} from "@react-navigation/bottom-tabs";
-import { RouteProp } from "@react-navigation/native";
 import { FontAwesome } from "@expo/vector-icons";
-import { HomeStack } from "./HomeStack";
+import {
+  BottomTabNavigationOptions,
+  createBottomTabNavigator,
+} from "@react-navigation/bottom-tabs";
+import { NavigationContainer, RouteProp } from "@react-navigation/native";
+import React from "react";
+
 import { ClipStack } from "./ClipStack";
+import { HomeStack } from "./HomeStack";
 
 type RootTabParamList = {
   Home: undefined;
@@ -22,8 +22,8 @@ const screenOptions = ({
   route,
 }: ScreenOptionsProps): BottomTabNavigationOptions => ({
   tabBarIcon: ({
-    focused,
     color,
+    focused,
     size,
   }: {
     focused: boolean;

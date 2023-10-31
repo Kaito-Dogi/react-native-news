@@ -1,4 +1,5 @@
 import { Article } from "src/models/Article";
+
 import { UserAction } from "./UserAction";
 
 /**
