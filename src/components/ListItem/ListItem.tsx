@@ -10,6 +10,9 @@ type Props = {
   onListItemPress: () => void;
 };
 
+/**
+ * @package
+ */
 export const ListItem: React.FC<Props> = ({
   author,
   imageUri,
