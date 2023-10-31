@@ -1,25 +1,32 @@
-import React from 'react';
-import { Image, Text, TouchableOpacity, View } from 'react-native';
-import { styles } from './styles';
+import React from "react";
+import { Image, Text, TouchableOpacity, View } from "react-native";
+import { styles } from "./styles";
 
-type ListItemProps = {
+type Props = {
   imageUri: string | undefined;
   title: string;
   author: string;
   onListItemPress: () => void;
 };
 
-export const ListItem: React.FC<ListItemProps> = (props) => {
+export const ListItem: React.FC<Props> = ({
+  imageUri,
+  title,
+  author,
+  onListItemPress,
+}) => {
   return (
-    <TouchableOpacity style={styles.itemContainer} onPress={props.onListItemPress}>
+    <TouchableOpacity style={styles.itemContainer} onPress={onListItemPress}>
       <View style={styles.imageContainer}>
-        {!!props.imageUri && <Image style={styles.image} source={{ uri: props.imageUri }} />}
+        {!!imageUri && (
+          <Image style={styles.image} source={{ uri: imageUri }} />
+        )}
       </View>
       <View style={styles.contentContainer}>
         <Text numberOfLines={3} style={styles.title}>
-          {props.title}
+          {title}
         </Text>
-        <Text style={styles.author}>{props.author}</Text>
+        <Text style={styles.author}>{author}</Text>
       </View>
     </TouchableOpacity>
   );

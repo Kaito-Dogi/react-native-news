@@ -8,7 +8,7 @@ import { addClip } from "src/store/actions/user";
 import { useDispatch } from "react-redux";
 import { HomeStackParamList } from "src/navigation";
 
-type ArticleScreenProps = {
+type Props = {
   navigation: StackNavigationProp<HomeStackParamList, "Article">;
   route: RouteProp<HomeStackParamList, "Article">;
 };
@@ -16,8 +16,11 @@ type ArticleScreenProps = {
 /**
  * @package
  */
-export const ArticleScreen: React.FC<ArticleScreenProps> = (props) => {
-  const { article } = props.route.params;
+export const ArticleScreen: React.FC<Props> = ({ navigation, route }) => {
+  // 使用しないが呼び出しておく
+  navigation;
+
+  const { article } = route.params;
   const dispatch = useDispatch();
 
   return (

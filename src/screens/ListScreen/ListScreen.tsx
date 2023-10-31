@@ -10,7 +10,7 @@ import { styles } from "./styles";
 import { ListItem } from "src/components/ListItem";
 import { HomeStackParamList } from "src/navigation";
 
-type ListScreenProps = {
+type Props = {
   navigation: StackNavigationProp<HomeStackParamList, "List">;
   route: RouteProp<HomeStackParamList, "List">;
 };
@@ -18,7 +18,10 @@ type ListScreenProps = {
 /**
  * @package
  */
-export const ListScreen: React.FC<ListScreenProps> = (props) => {
+export const ListScreen: React.FC<Props> = ({ navigation, route }) => {
+  // 使用しないが呼び出しておく
+  route;
+
   const [articles, setArticles] = useState<Article[]>([]);
 
   useEffect(() => {
@@ -43,7 +46,7 @@ export const ListScreen: React.FC<ListScreenProps> = (props) => {
             title={article.item.title}
             author={article.item.author}
             onListItemPress={() =>
-              props.navigation.navigate("Article", { article: article.item })
+              navigation.navigate("Article", { article: article.item })
             }
           />
         )}
